@@ -15,8 +15,8 @@ ctypedef np.uint8_t DTYPE_uint8_t
 DTYPE_uint32 = np.uint32
 ctypedef np.uint32_t DTYPE_uint32_t
 
-DTYPE_int = np.int
-ctypedef np.int_t DTYPE_int_t
+DTYPE_int = np.int32
+ctypedef np.int32_t DTYPE_int_t
 
 DTYPE_float32 = np.float32
 ctypedef np.float32_t DTYPE_float32_t
@@ -39,7 +39,7 @@ cdef np.ndarray[DTYPE_uint32_t, ndim=2] _feature_shape(DTYPE_float32_t[:, :, :] 
         Py_ssize_t label = 2
         DTYPE_float32_t min_dev, dev, cum_value
         DTYPE_float32_t p_value_r, p_value_g, p_value_b, p_value_r_o, p_value_g_o, p_value_b_o
-        DTYPE_int_t[:] idx = np.array([-1, 0, 1], dtype='int')
+        DTYPE_int_t[:] idx = np.array([-1, 0, 1], dtype='int32')
         DTYPE_float32_t[:, :] out_image = np.ones((rows, cols), dtype='float32')
         DTYPE_float32_t sq_diff = (255.**2. + 255.**2. + 255.**2.) ** .5
         DTYPE_float32_t[:] r_tuple = np.array([0, 0], dtype='float32')
