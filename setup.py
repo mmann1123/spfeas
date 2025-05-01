@@ -42,6 +42,7 @@ required_packages = [
     "tenacity>=8.0.0",  # Replaced retrying with tenacity
     "future>=1.0.0",
     "pysal>=25.1",
+    "tqdm>=4.0.0",  # Added tqdm as a dependency
 ]
 
 if platform.system() != "Windows":
